@@ -32,9 +32,11 @@ Kubernetes components can be divided into two categories:
 4. kube-controller-manager:
 - Runs controllers, which are background processes that ensure the desired state of the cluster matches the current state.
 - Example controllers include:
+   --> Node Controller: Ensures all nodes in the cluster are healthy.
   
-    Node Controller: Ensures all nodes in the cluster are healthy.
+   --> Replication Controller: Ensures the correct number of pod replicas are running.
   
-    Replication Controller: Ensures the correct number of pod replicas are running.
-  
-    Endpoint Controller: Manages service endpoints.
+   --> Endpoint Controller: Manages service endpoints.
+
+# Components of Worker Node
+
