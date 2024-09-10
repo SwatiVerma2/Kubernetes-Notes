@@ -6,14 +6,14 @@
   
 ![image](https://github.com/user-attachments/assets/f7368e64-b0f7-402e-8615-49480bd01809)
 
-## Kubernetes Components
+# Kubernetes Components
 Kubernetes components can be divided into two categories:
 
 1. Worker nodes / minion: Each Kubernetes cluster requires at least one worker node, which is a collection of worker machines that make up the nodes where our container will be deployed.
 2. Control plane / Master plane: The worker nodes and any pods contained within them will be under the control plane.
 
 
-### Control Plane Components
+## Control Plane Components
 
 1. kube-apiserver:
 - Acts as the front-end for the Kubernetes control plane. It exposes the Kubernetes API, which is the central point for managing the cluster.
