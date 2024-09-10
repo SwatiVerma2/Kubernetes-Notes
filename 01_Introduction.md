@@ -70,3 +70,18 @@ When millions of users log in simultaneously on Jio Cinema during a cricket matc
 - Network Management: Kubernetes provides a network model that allows applications to communicate with each other in a secure and reliable manner.
 - Storage Orchestration: Kubernetes can manage persistent storage for applications, such as databases or file systems.
 - Extensibility: Kubernetes is highly extensible, allowing you to add new features and functionality through plugins and custom controllers.
+
+## NOTE
+
+- Kubernetes (K8s) was an internal project at Google before it was open-sourced. 
+- It originated from the **Google Borg project**, which was a cluster management system used internally to manage large-scale distributed systems.
+- Kubernetes was introduced in 2014. 
+- Kubernetes is primarily written in Go.
+
+### Popular Container Orchestration Tools:
+
+- Kubernetes
+- Docker Swarm
+- Apache Mesos
+- OpenShift
+- PKE (Platform Kubernetes Engine)
