@@ -30,7 +30,9 @@ A **Monolithic Application** is a single, unified software system where all comp
   3. **Scaling and Load Balancing:** Docker alone doesn't handle container scaling, load balancing, or failover, requiring additional tools for orchestration.
 
 ## Why Kubernetes:
-As applications scale with microservices and containers, managing them becomes increasingly complex. Kubernetes solves many of the issues faced by Docker alone. Kubernetes automates many operational tasks such as scaling, load balancing, failover, and resource management, making it easier to deploy and operate containerized applications in production.
+- As applications scale with microservices and containers, managing them becomes increasingly complex. 
+- Kubernetes solves many of the issues faced by Docker alone.
+- Kubernetes automates many operational tasks such as scaling, load balancing, failover, and resource management, making it easier to deploy and operate containerized applications in production.
 
 ### What is Kubernetes:
 **Kubernetes** (K8s) is an open-source orchestration platform that automates the deployment, scaling, and management of containerized applications. It helps manage clusters of containers by orchestrating them to ensure high availability, efficient resource usage, and scaling based on demand. Kubernetes abstracts away the complexity of maintaining multiple containers, ensuring they run smoothly even in complex environments.
@@ -41,7 +43,9 @@ As applications scale with microservices and containers, managing them becomes i
   3. **Efficient Resource Management:** Kubernetes optimizes resource usage, ensuring containers run efficiently.
   4. **Seamless Deployment:** It allows for rolling updates, ensuring that applications stay up-to-date without downtime.
 
-In summary, while monolithic applications are easier to develop initially, they present challenges in scalability and maintainability. Microservices offer flexibility but come with management overhead, while Docker solves many deployment issues but lacks orchestration. Kubernetes provides a powerful solution for managing complex, containerized applications at scale.
+- In summary, while monolithic applications are easier to develop initially, they present challenges in scalability and maintainability. 
+- Microservices offer flexibility but come with management overhead, while Docker solves many deployment issues but lacks orchestration. 
+- Kubernetes provides a powerful solution for managing complex, containerized applications at scale.
 
 ## Real-time example of Kubernetes:
 A real-time example of Kubernetes autoscaling can be seen with streaming platforms like Netflix or Jio Cinema during major events.
