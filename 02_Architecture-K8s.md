@@ -56,4 +56,39 @@ The Components of a Worker Node in Kubernetes are responsible for running the ac
 - It maintains network rules on the node to allow for communication between different pods (inside and outside the cluster).
 - It forwards traffic between pods and services based on the cluster's service and pod IPs.
 
-  
+
+# Pods
+## What is a Pod in Kubernetes?
+- A Pod is the smallest, most basic unit of deployment in Kubernetes. 
+- It represents a single instance of a running process in a cluster. 
+- Each pod can contain one or more tightly coupled containers that share the same network namespace, IP address, and storage volumes. 
+- Pods are **ephemeral**, meaning they can be created, destroyed, and replaced as needed.
+
+## Limitations of a Pod:
+
+**1. Ephemeral Nature:**
+
+Pods are designed to be temporary and can be destroyed and recreated by Kubernetes. 
+If a pod dies, it won't automatically restart unless managed by a higher-level controller.
+
+**2. Lack of Scalability:**
+
+A pod is a single instance of an application. 
+Managing and scaling multiple pods manually across nodes is complex without automation.
+
+**3. No Built-in Auto-Healing:**
+
+Pods do not automatically self-heal. If they fail, Kubernetes won’t restart them on its own unless they are part of a higher-level object.
+
+**4. Static Assignment:**
+
+Pods don't support dynamic placement or scaling across multiple nodes without the use of controllers.
+
+### Objects that Overcome Pod Limitations:
+
+- ReplicaSet:
+- Deployment:
+- StatefulSet:
+- DaemonSet:
+- Job/CronJob:
+- Horizontal Pod Autoscaler (HPA):
