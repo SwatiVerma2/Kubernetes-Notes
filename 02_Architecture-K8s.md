@@ -66,23 +66,13 @@ The Components of a Worker Node in Kubernetes are responsible for running the ac
 
 ## Limitations of a Pod:
 
-**1. Ephemeral Nature:**
+**1. Ephemeral Nature:** Pods are designed to be temporary and can be destroyed and recreated by Kubernetes. If a pod dies, it won't automatically restart unless managed by a higher-level controller.
 
-Pods are designed to be temporary and can be destroyed and recreated by Kubernetes. 
-If a pod dies, it won't automatically restart unless managed by a higher-level controller.
+**2. Lack of Scalability:** A pod is a single instance of an application. Managing and scaling multiple pods manually across nodes is complex without automation.
 
-**2. Lack of Scalability:**
+**3. No Built-in Auto-Healing:** Pods do not automatically self-heal. If they fail, Kubernetes won’t restart them on its own unless they are part of a higher-level object.
 
-A pod is a single instance of an application. 
-Managing and scaling multiple pods manually across nodes is complex without automation.
-
-**3. No Built-in Auto-Healing:**
-
-Pods do not automatically self-heal. If they fail, Kubernetes won’t restart them on its own unless they are part of a higher-level object.
-
-**4. Static Assignment:**
-
-Pods don't support dynamic placement or scaling across multiple nodes without the use of controllers.
+**4. Static Assignment:** Pods don't support dynamic placement or scaling across multiple nodes without the use of controllers.
 
 ### Objects that Overcome Pod Limitations:
 
