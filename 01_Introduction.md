@@ -35,15 +35,13 @@ A **Monolithic Application** is a single, unified software system where all comp
 ### What is Kubernetes:
 **Kubernetes** (K8s) is an open-source orchestration platform that automates the deployment, scaling, and management of containerized applications. It helps manage clusters of containers by orchestrating them to ensure high availability, efficient resource usage, and scaling based on demand. Kubernetes abstracts away the complexity of maintaining multiple containers, ensuring they run smoothly even in complex environments.
 
-- **Why Kubernetes is the Solution:**
+### **Why Kubernetes is the Solution:**
   1. **Automated Scaling:** Kubernetes automatically adjusts the number of running containers based on demand.
   2. **Load Balancing and Self-Healing:** It distributes traffic across containers and restarts failed ones to ensure availability.
   3. **Efficient Resource Management:** Kubernetes optimizes resource usage, ensuring containers run efficiently.
   4. **Seamless Deployment:** It allows for rolling updates, ensuring that applications stay up-to-date without downtime.
 
-- In summary, while monolithic applications are easier to develop initially, they present challenges in scalability and maintainability. 
-- Microservices offer flexibility but come with management overhead, while Docker solves many deployment issues but lacks orchestration. 
-- Kubernetes provides a powerful solution for managing complex, containerized applications at scale.
+In summary, while monolithic applications are easier to develop initially, they present challenges in scalability and maintainability. Microservices offer flexibility but come with management overhead, while Docker solves many deployment issues but lacks orchestration. Kubernetes provides a powerful solution for managing complex, containerized applications at scale.
 
 ## Real-time example of Kubernetes:
 A real-time example of Kubernetes autoscaling can be seen with streaming platforms like Netflix or Jio Cinema during major events.
