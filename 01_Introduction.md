@@ -45,19 +45,19 @@ In summary, while monolithic applications are easier to develop initially, they 
 
 ## Real-time example of Kubernetes:
 A real-time example of Kubernetes autoscaling can be seen with streaming platforms like Netflix or Jio Cinema during major events.
+
 ### Scenario:
+
 When a popular event occurs like Ashes, BGT, CWC etc , millions of users log in simultaneously to watch the event. This sudden spike in traffic requires the platform to handle the increased load without performance degradation.
 
 ### How Kubernetes Helps:
 
 - Autoscaling: Kubernetes uses Horizontal Pod Autoscaler (HPA) to automatically scale pods based on CPU or memory usage. When traffic surges (e.g., during a popular event), Kubernetes spins up additional pods to handle the load.
-- 
 - Efficient Resource Utilization: As traffic decreases (e.g., after the match), Kubernetes automatically scales down pods, freeing up resources and reducing costs.
-- 
 - Zero Downtime: Dynamic scaling ensures a seamless user experience during high demand, without manual intervention, maintaining continuous availability.
 
 ### For instance
-when millions of users log in simultaneously on Jio Cinema during a cricket match, Kubernetes ensures the application scales up instantly by creating more pods (containers) to handle the demand. When users log out after the match, Kubernetes automatically scales down, terminating the unused pods to save resources.
+When millions of users log in simultaneously on Jio Cinema during a cricket match, Kubernetes ensures the application scales up instantly by creating more pods (containers) to handle the demand. When users log out after the match, Kubernetes automatically scales down, terminating the unused pods to save resources.
 
 ## Key Features of Kubernetes:
 
