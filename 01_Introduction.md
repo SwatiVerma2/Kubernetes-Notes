@@ -1,7 +1,5 @@
 # History
 
-Here's an updated explanation that includes the challenges faced by Monolithic Applications, Microservices, and Docker:
-
 ## Monolithic Application:
 A **Monolithic Application** is a single, unified software system where all components (UI, database, business logic) are tightly integrated and run as one unit. 
 
