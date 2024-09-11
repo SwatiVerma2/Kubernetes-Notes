@@ -71,9 +71,9 @@
 
 ### Example of a Node Selector
 
-1.Labeling a Node: `kubectl label node <node-name> disktype=ssd`
+1. Labeling a Node: `kubectl label node <node-name> disktype=ssd`
 
-2.Using nodeSelector in a Pod Spec: you specify the nodeSelector field to ensure the Pod is only scheduled on Nodes that have the disktype=ssd label.
+2. Using nodeSelector in a Pod Spec: you specify the nodeSelector field to ensure the Pod is only scheduled on Nodes that have the disktype=ssd label.
 
 ```yaml
 apiVersion: v1
