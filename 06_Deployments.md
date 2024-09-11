@@ -29,9 +29,9 @@
 - `kubectl scale --replicas=1 deploy <deployment-name>`
 - `kubectl logs -f <pod-name>`
   
-### `kubectl rollout status deployment <deployment-name>` 
+#### `kubectl rollout status deployment <deployment-name>` 
 
-- This command monitors the status of a rollout for a specific Deployment. It provides real-time information about the progress of a Deployment update. This command tells you whether the Deployment is in progress, successful, or encountering issues.
+This command monitors the status of a rollout for a specific Deployment. It provides real-time information about the progress of a Deployment update. This command tells you whether the Deployment is in progress, successful, or encountering issues.
   
 - When to Use:
 
@@ -40,7 +40,7 @@
 2. Verification: After initiating an update or rollback, use this command to confirm that the process has completed successfully.
 
   
-### `kubectl rollout history deployment <deployment-name>`
+#### `kubectl rollout history deployment <deployment-name>`
 
 - This command displays the revision history of a Deployment.
 - It shows a list of all revisions of the specified Deployment, including details about each revision. This helps track changes over time and understand what has been deployed previously.
@@ -51,7 +51,7 @@
   
 2. Audit and Troubleshoot: To review past deployments and understand the evolution of your application.
    
-### `kubectl rollout undo deployment <deployment-name>` or `kubectl rollout undo deployment/<deployment-name> --to-revision=2`
+#### `kubectl rollout undo deployment <deployment-name>` or `kubectl rollout undo deployment/<deployment-name> --to-revision=2`
 
 - It rolls back the Deployment to its previous revision, which is useful if the most recent update has caused issues or failed.
 - This command restores the Deployment to the state it was in before the latest change.
