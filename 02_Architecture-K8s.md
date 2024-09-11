@@ -64,7 +64,7 @@ The Components of a Worker Node in Kubernetes are responsible for running the ac
 - Each pod can contain one or more tightly coupled containers that share the same network namespace, IP address, and storage volumes. 
 - Pods are **ephemeral**, meaning they can be created, destroyed, and replaced as needed.
 
-## Limitations of a Pod:
+## Limitations of a Pod
 
 **1. Ephemeral Nature:** Pods are designed to be temporary and can be destroyed and recreated by Kubernetes. If a pod dies, it won't automatically restart unless managed by a higher-level controller.
 
@@ -74,11 +74,11 @@ The Components of a Worker Node in Kubernetes are responsible for running the ac
 
 **4. Static Assignment:** Pods don't support dynamic placement or scaling across multiple nodes without the use of controllers.
 
-### Objects that Overcome Pod Limitations:
+### Objects that Overcome Pod Limitations
 
-- ReplicaSet:
-- Deployment:
-- StatefulSet:
-- DaemonSet:
-- Job/CronJob:
-- Horizontal Pod Autoscaler (HPA):
+- ReplicaSet
+- Deployment
+- StatefulSet
+- DaemonSet
+- Job/CronJob
+- Horizontal Pod Autoscaler (HPA)
