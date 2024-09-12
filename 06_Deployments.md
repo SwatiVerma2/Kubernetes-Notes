@@ -61,42 +61,41 @@ spec:
   
     ![image](https://github.com/user-attachments/assets/716e2e40-18e3-4e73-a56f-a63cd5f170cb)
   
-#### `kubectl rollout status deployment <deployment-name>` 
+- `kubectl rollout status deployment <deployment-name>` 
 
-This command monitors the status of a rollout for a specific Deployment. It provides real-time information about the progress of a Deployment update. This command tells you whether the Deployment is in progress, successful, or encountering issues.
+  - This command monitors the status of a rollout for a specific Deployment.
+  - It provides real-time information about the progress of a Deployment update.
+  - This command tells you whether the Deployment is in progress, successful, or encountering issues.
+  - When to Use:
+    
+      1. Monitoring Progress: To check if a new version of the application has been deployed successfully or if there are issues during the update.
+         
+      2. Verification: After initiating an update or rollback, use this command to confirm that the process has completed successfully.
 
   ![image](https://github.com/user-attachments/assets/9a99146a-ba8b-4c51-8885-8d155517416c)
-
-- When to Use:
-
-1. Monitoring Progress: To check if a new version of the application has been deployed successfully or if there are issues during the update.
-   
-2. Verification: After initiating an update or rollback, use this command to confirm that the process has completed successfully.
-
   
-#### `kubectl rollout history deployment <deployment-name>`
+- `kubectl rollout history deployment <deployment-name>`
 
-- This command displays the revision history of a Deployment.
-- It shows a list of all revisions of the specified Deployment, including details about each revision. This helps track changes over time and understand what has been deployed previously.
+  - This command displays the revision history of a Deployment.
+  - It shows a list of all revisions of the specified Deployment, including details about each revision. This helps track changes over time and understand what has been deployed previously.
+  -  When to Use:
+  
+      1. Tracking Changes: To view the history of updates to a Deployment, including what changes were made and when.
+        
+      2. Audit and Troubleshoot: To review past deployments and understand the evolution of your application.
   
   ![image](https://github.com/user-attachments/assets/11023c71-60ab-4439-b2f1-a307b64e2330)
 
-- When to Use:
-
-1. Tracking Changes: To view the history of updates to a Deployment, including what changes were made and when.
-  
-2. Audit and Troubleshoot: To review past deployments and understand the evolution of your application.
    
-#### `kubectl rollout undo deployment <deployment-name>` or `kubectl rollout undo deployment/<deployment-name> --to-revision=2`
+   
+- `kubectl rollout undo deployment <deployment-name>` or `kubectl rollout undo deployment/<deployment-name> --to-revision=2`
 
-- It rolls back the Deployment to its previous revision, which is useful if the most recent update has caused issues or failed.
-- This command restores the Deployment to the state it was in before the latest change.
-
-- When to Use:
-
-1. Reverting Changes: If a recent deployment introduces issues or fails, use this command to roll back to a previous, stable version.
-
-2. Quick Fix: To quickly undo problematic updates and restore a previously working state of the application.
+  - It rolls back the Deployment to its previous revision, which is useful if the most recent update has caused issues or failed.
+  - This command restores the Deployment to the state it was in before the latest change.
+  - When to Use:
+    1. Reverting Changes: If a recent deployment introduces issues or fails, use this command to roll back to a previous, stable version.
+    
+    2. Quick Fix: To quickly undo problematic updates and restore a previously working state of the application.
 
 
 ## Reasons for a Deployment to Fail
