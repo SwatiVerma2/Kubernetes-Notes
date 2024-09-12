@@ -50,11 +50,11 @@ spec:
        
    Eg1. kubectl get pods -l environment!=production
        
-       ![image](https://github.com/user-attachments/assets/3211819f-e239-4585-a210-913b56c4a814)
+    ![image](https://github.com/user-attachments/assets/3211819f-e239-4585-a210-913b56c4a814)
 
    Eg2. kubectl get pods -l environment=production
      
-        ![image](https://github.com/user-attachments/assets/35240b27-75d3-406e-865f-5bf8548437e6)
+   ![image](https://github.com/user-attachments/assets/35240b27-75d3-406e-865f-5bf8548437e6)
 
 2. **Set-based Selectors**: Select objects based on a set of conditions like `in`, `notin`, `exists`.
 
