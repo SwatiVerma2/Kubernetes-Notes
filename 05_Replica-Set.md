@@ -7,11 +7,11 @@ Scaling refers to adjusting the number of replicas of an application (Pods) runn
 
 1. Horizontal Scaling (the most common in Kubernetes)
    
-    - Scaling Out: Adding more Pods to distribute load.
-    - Scaling In: Reducing the number of Pods when the load decreases.
-    - Example: To scale a Deployment to 5 replicas:
-    - `kubectl scale deployment <deployment-name> --replicas=5`
-    - Kubernetes also offers auto-scaling using the **Horizontal Pod Autoscaler (HPA)**, which adjusts the number of replicas based on CPU utilization or other custom metrics.
+- Scaling Out: Adding more Pods to distribute load.
+- Scaling In: Reducing the number of Pods when the load decreases.
+- Example: To scale a Deployment to 5 replicas:
+- `kubectl scale deployment <deployment-name> --replicas=5`
+- Kubernetes also offers auto-scaling using the **Horizontal Pod Autoscaler (HPA)**, which adjusts the number of replicas based on CPU utilization or other custom metrics.
 
 2. Vertical Scaling
 
