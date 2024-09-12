@@ -76,17 +76,17 @@ spec:
 
 # Node Selector
 
-- A Node Selector in Kubernetes is a mechanism that allows you to control which Nodes a Pod is scheduled on, based on labels applied to the Nodes. 
+- A Node Selector is a mechanism that allows you to control which Nodes a Pod is scheduled on, based on labels applied to the Nodes. 
 - It ensures that Pods are scheduled only on Nodes that match specific criteria. 
 - This is particularly useful when you want to run certain workloads on specific types of hardware, environments, or zones within your cluster.
 
 ### **How Node Selector Works:**
-- Nodes are labeled: Nodes in a Kubernetes cluster are tagged with labels (key-value pairs) that define their characteristics. For example, a Node could be labeled as disktype=ssd or environment=production.
+- Nodes are labeled: Nodes in a Kubernetes cluster are tagged with labels that define their characteristics.
 - Pods specify a Node Selector: In the Pod's specification, you can add a nodeSelector field with a key-value pair that matches a Node's label. Kubernetes will only schedule that Pod on a Node that has the specified label.
 
 ### Example of a Node Selector
 
-1. Labeling a Node: `kubectl label node <node-name> disktype=ssd`
+1. Labeling a Node:  `kubectl label node minikube instance=t2.micro`
 
 2. Using nodeSelector in a Pod Spec: you specify the nodeSelector field to ensure the Pod is only scheduled on Nodes that have the disktype=ssd label.
 
@@ -94,12 +94,17 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod
+  name: node-selector
 spec:
   containers:
-    - name: my-container
-      image: nginx
+    - name: mycontaier
+      image: ubuntu
+      command: ["sleep", "infinity"] # Keeps the container alive
   nodeSelector:
-    disktype: ssd
+    instance: t2.micro
+
 ```
-- the Pod my-pod will only be scheduled on a Node that has the label disktype=ssd.
+- the Pod my-pod will only be scheduled on a Node that has the label instance=t2.micro. 
+- if  no node is avaible with that label it's gonna create an error. `kubectl describe pod nodeselector`
+  ![image](https://github.com/user-attachments/assets/9512d9cc-5297-4b75-940e-f4509c36af9e)
+
