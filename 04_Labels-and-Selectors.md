@@ -10,12 +10,19 @@
    **Example of labels**:
    ```yaml
    apiVersion: v1
-   kind: Pod
-   metadata:
-     name: my-pod
-     labels:
-       app: frontend
-       environment: production
+kind: Pod
+metadata:
+  name: myfirstpod
+  labels:
+    organisation: nvidia
+    environment: production
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
    ```
 
    In this example, the Pod is labeled with `app: frontend` and `environment: production`.
@@ -23,12 +30,15 @@
 ### Command
 
 - `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
-  
+
+  ![image](https://github.com/user-attachments/assets/42feb18a-6ab0-4e73-be81-c7e408c33d95)
+
 - `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service). 
   Eg. `kubectl label pod my-pod app=frontend`
 
 - `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
-
+  
+![image](https://github.com/user-attachments/assets/63aea79c-3263-44b0-bab7-9a8622891044)
 
 ### 2. **Selectors in Kubernetes**
    - **Definition**: Selectors are used to **filter** and identify objects based on their labels. They are mainly used by Kubernetes resources like Services, ReplicaSets, or Deployments to select specific Pods.
