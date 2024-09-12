@@ -84,9 +84,3 @@ spec:
 - Label Selector: Manages pods based on labels.
 - Pod Management: Handles starting, stopping, and replacing pods.
 - Deprecated: Replaced by ReplicaSets and Deployments for better functionality and management.
-
-### Example
-
-```yaml
-
-```
