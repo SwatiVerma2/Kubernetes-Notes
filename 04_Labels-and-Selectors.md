@@ -103,7 +103,7 @@ spec:
     instance: t2.micro
 
 ```
-- the Pod my-pod will only be scheduled on a Node that has the label instance=t2.micro.
+- the Pod node-selector will only be scheduled on a Node that has the label instance=t2.micro.
   
   ![image](https://github.com/user-attachments/assets/c8295333-fff0-4667-9531-fdc5d6fa7573)
 
