@@ -1,38 +1,72 @@
 # Deployments
-- Deployment is a higher-level abstraction used to manage the lifecycle of Pods and ReplicaSets. 
+- Deployment is a higher-level abstraction used to **manage the lifecycle of Pods and ReplicaSets.**
 - It provides a more powerful and flexible way to handle rolling updates, scaling, rollbacks, and self-healing of your application.
 
-### Key Features of Deployments
+### Features 
 
-**1. Declarative Updates:** You define the desired state (e.g., how many replicas of a Pod should be running, which container image to use), and Kubernetes will ensure that the current state matches the desired state.
+1. **Declarative Updates:** Define the desired state (e.g., replicas, container images) and Kubernetes ensures the current state matches this.
 
-**2. Rolling Updates:** Deployments support rolling updates, meaning that when you update your application (e.g., change the container image), Pods are gradually replaced with the new version. This ensures zero downtime during updates.
+2. **Rolling Updates:** Gradually replace old Pods with new versions during updates, ensuring zero downtime.
 
-**3. Rollback:** If something goes wrong during an update, Kubernetes allows you to easily rollback to a previous version of the Deployment.
+3. **Rollback:** Easily revert to a previous version if an update fails.
 
-**4. Scaling:** Deployments allow you to scale your application up or down by adjusting the number of replicas. You can do this manually or automatically using a Horizontal Pod Autoscaler.
+4. **Scaling:** Adjust the number of replicas manually or automatically with a Horizontal Pod Autoscaler.
 
-**5. Self-healing:** If a Pod managed by a Deployment fails or becomes unresponsive, Kubernetes will automatically create new Pods to maintain the desired number of replicas.
+5. **Self-healing:** Automatically replaces failed or unresponsive Pods to maintain the desired replica count.
 
-**6. Versioning and History:** Every time you update a Deployment, Kubernetes keeps a history of changes. This allows you to review and rollback to previous states if necessary.
+6. **Versioning and History:** Keeps a history of updates, allowing you to review and roll back to previous states if needed.
 
 ### Use Cases:
+
 - Automated Updates: When updating an application, Deployments make sure the update is applied smoothly without causing service disruption.
 - Scaling: Easily scale your application based on demand.
 - Version Control and Rollbacks: Maintain control over application versions, allowing you to revert to a stable version if an update fails.
 
-## Commands
+## Example
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment
+  labels:
+    org: nvidia
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      org: nvidia
+  template:
+    metadata:
+      labels:
+        org: nvidia
+    spec:
+      containers:                 
+        - name: mycontainer       
+          image: ubuntu
+          command: ["sleep", "infinity"] 
+```
+
+### Commands
 
 - `kubectl get deploy`
+  
+   ![image](https://github.com/user-attachments/assets/1bfe93ed-5dcb-4b0f-957e-e682af9fe64f)
+
 - `kubectl describe deploy <deployment-name>`
 - `kubectl get rs`
+  
+  ![image](https://github.com/user-attachments/assets/a34b66df-68a9-4b49-9af0-97b03c5111c8)
+
 - `kubectl scale --replicas=1 deploy <deployment-name>`
-- `kubectl logs -f <pod-name>`
+  
+    ![image](https://github.com/user-attachments/assets/716e2e40-18e3-4e73-a56f-a63cd5f170cb)
   
 #### `kubectl rollout status deployment <deployment-name>` 
 
 This command monitors the status of a rollout for a specific Deployment. It provides real-time information about the progress of a Deployment update. This command tells you whether the Deployment is in progress, successful, or encountering issues.
-  
+
+  ![image](https://github.com/user-attachments/assets/9a99146a-ba8b-4c51-8885-8d155517416c)
+
 - When to Use:
 
 1. Monitoring Progress: To check if a new version of the application has been deployed successfully or if there are issues during the update.
@@ -45,6 +79,8 @@ This command monitors the status of a rollout for a specific Deployment. It prov
 - This command displays the revision history of a Deployment.
 - It shows a list of all revisions of the specified Deployment, including details about each revision. This helps track changes over time and understand what has been deployed previously.
   
+  ![image](https://github.com/user-attachments/assets/11023c71-60ab-4439-b2f1-a307b64e2330)
+
 - When to Use:
 
 1. Tracking Changes: To view the history of updates to a Deployment, including what changes were made and when.
