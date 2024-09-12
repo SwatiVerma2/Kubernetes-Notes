@@ -28,19 +28,18 @@ spec:
    In this example, the Pod is labeled with `app: frontend` and `environment: production`.
 
 ### Command
-
-- `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
+1. `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
 
   ![image](https://github.com/user-attachments/assets/5eb713bb-6989-40e5-a4a4-1c010b316c4c)
 
 
-- `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service).
+2. `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service).
   
-  Eg. `kubectl label pod my-pod app=frontend`
+    Eg. `kubectl label pod my-pod app=frontend`
 
-- `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
+3. `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
   
-![image](https://github.com/user-attachments/assets/63aea79c-3263-44b0-bab7-9a8622891044)
+   ![image](https://github.com/user-attachments/assets/63aea79c-3263-44b0-bab7-9a8622891044)
 
 ### 2. **Selectors in Kubernetes**
    - **Definition**: Selectors are used to **filter** and identify objects based on their labels. They are mainly used by Kubernetes resources like Services, ReplicaSets, or Deployments to select specific Pods.
@@ -104,7 +103,11 @@ spec:
     instance: t2.micro
 
 ```
-- the Pod my-pod will only be scheduled on a Node that has the label instance=t2.micro. 
+- the Pod my-pod will only be scheduled on a Node that has the label instance=t2.micro.
+  
+  ![image](https://github.com/user-attachments/assets/c8295333-fff0-4667-9531-fdc5d6fa7573)
+
 - if  no node is avaible with that label it's gonna create an error. `kubectl describe pod nodeselector`
+  
   ![image](https://github.com/user-attachments/assets/9512d9cc-5297-4b75-940e-f4509c36af9e)
 
