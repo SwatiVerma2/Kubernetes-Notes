@@ -9,17 +9,17 @@
    
    **Example of labels**:
    ```yaml
-   apiVersion: v1
+apiVersion: v1
 kind: Pod
 metadata:
-  name: myfirstpod
+  name: firstpod
   labels:
     organisation: nvidia
     environment: production
 spec:
   containers:
-  - name: nginx
-    image: nginx:1.14.2
+  - name: c1
+    image: ubuntu
     ports:
     - containerPort: 80
 
@@ -31,9 +31,11 @@ spec:
 
 - `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
 
-  ![image](https://github.com/user-attachments/assets/42feb18a-6ab0-4e73-be81-c7e408c33d95)
+  ![image](https://github.com/user-attachments/assets/5eb713bb-6989-40e5-a4a4-1c010b316c4c)
 
-- `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service). 
+
+- `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service).
+  
   Eg. `kubectl label pod my-pod app=frontend`
 
 - `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
