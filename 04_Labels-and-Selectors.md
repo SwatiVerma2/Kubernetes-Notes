@@ -43,23 +43,26 @@ spec:
 ### 2. **Selectors in Kubernetes**
    - **Definition**: Selectors are used to **filter** and identify objects based on their labels. They are mainly used by Kubernetes resources like Services, ReplicaSets, or Deployments to select specific Pods.
    - **Purpose**: Selectors enable you to query and filter resources based on the labels you have assigned to them. This allows you to target groups of resources dynamically without having to explicitly name them.
-   - **Types of Selectors**:
-     - **Equality-based Selectors**: Select objects that have a specific label key-value pair. Eg. =, !=
-     - **Set-based Selectors**: Select objects based on a set of conditions like `in`, `notin`, `exists`.
+     
+### Types of Selectors
+     
+1. **Equality-based Selectors**: Select objects that have a specific label key-value pair. Eg. =, !=
+       
+   Eg1. kubectl get pods -l environment!=production
+       
+       ![image](https://github.com/user-attachments/assets/3211819f-e239-4585-a210-913b56c4a814)
 
-   **Example of a selector**:
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-service
-   spec:
-     selector:
-       app: frontend
-   ```
+   Eg2. kubectl get pods -l environment=production
+     
+        ![image](https://github.com/user-attachments/assets/35240b27-75d3-406e-865f-5bf8548437e6)
 
-   In this example, the Service selects all Pods with the label `app: frontend`. This enables the Service to route traffic to any Pod that matches the `app: frontend` label.
+2. **Set-based Selectors**: Select objects based on a set of conditions like `in`, `notin`, `exists`.
 
+   Eg. kubectl get pods -l 'organisation in (nvidia)'
+     
+     ![image](https://github.com/user-attachments/assets/e961968c-a45d-473f-a2c5-796e0bfc1d08)
+
+ 
 ### **How Labels and Selectors Work Together**
    - **Labels**: Attach metadata to objects.
    - **Selectors**: Enable resources (like Services or Deployments) to select and operate on a group of objects based on their labels.
