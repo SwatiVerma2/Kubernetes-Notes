@@ -72,3 +72,21 @@ spec:
 3 replicas are created
 
 ![image](https://github.com/user-attachments/assets/d55b2360-8518-4906-aca2-8c07d09b6f44)
+
+# Replication Controller
+
+- A Replication Controller in Kubernetes is an older resource used to ensure that a specified number of pod replicas are running at any given time. 
+- It ensures high availability and fault tolerance for applications.
+
+### Features
+
+- Maintains Replica Count: Keeps a specified number of pods running, replacing any that fail.
+- Label Selector: Manages pods based on labels.
+- Pod Management: Handles starting, stopping, and replacing pods.
+- Deprecated: Replaced by ReplicaSets and Deployments for better functionality and management.
+
+### Example
+
+```yaml
+
+```
