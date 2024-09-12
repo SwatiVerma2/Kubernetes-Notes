@@ -30,7 +30,7 @@ spec:
 ### Command
 1. `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
 
-  ![image](https://github.com/user-attachments/assets/5eb713bb-6989-40e5-a4a4-1c010b316c4c)
+     ![image](https://github.com/user-attachments/assets/5eb713bb-6989-40e5-a4a4-1c010b316c4c)
 
 
 2. `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service).
