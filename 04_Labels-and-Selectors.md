@@ -8,6 +8,7 @@
    - **Purpose**: Labels are designed to allow users to identify and select resources easily. They do not have any implicit semantic meaning to the system itself, meaning Kubernetes doesn’t act on labels by default unless they are used in selectors.
    
    **Example of labels**:
+   
    ```yaml
 apiVersion: v1
 kind: Pod
@@ -20,6 +21,7 @@ spec:
   containers:
   - name: c1
     image: ubuntu
+    command: ["sleep", "infinity"]
     ports:
     - containerPort: 80
 
@@ -30,16 +32,17 @@ spec:
 ### Command
 1. `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
 
-     ![image](https://github.com/user-attachments/assets/5eb713bb-6989-40e5-a4a4-1c010b316c4c)
-
+   ![image](https://github.com/user-attachments/assets/9941940e-b64f-4412-b18a-47f470c5dd16)
 
 2. `kubectl label <resource-type> <resource-name> <key>=<value>`: This command adds or modifies a label for a specific resource (like a Pod, Node, or Service).
   
-    Eg. `kubectl label pod my-pod app=frontend`
+    Eg. `kubectl label pod firstpod name=swati`
+         
+     ![image](https://github.com/user-attachments/assets/10f365fc-af9a-4743-86c3-a12d911af77f)
 
-3. `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
+4. `kubectl get pods -l <key>=<value>` : retrieves all Pods that have a label matching the specified key-value pair. This is useful for filtering resources based on labels.
   
-   ![image](https://github.com/user-attachments/assets/63aea79c-3263-44b0-bab7-9a8622891044)
+   ![image](https://github.com/user-attachments/assets/3ca1a84b-08d3-4274-9750-0ef6a1cc24ea)
 
 ### 2. **Selectors in Kubernetes**
    - **Definition**: Selectors are used to **filter** and identify objects based on their labels. They are mainly used by Kubernetes resources like Services, ReplicaSets, or Deployments to select specific Pods.
@@ -49,20 +52,23 @@ spec:
      
 1. **Equality-based Selectors**: Select objects that have a specific label key-value pair. Eg. =, !=
        
-   Eg1. kubectl get pods -l environment!=production
+   Eg 1. kubectl get pods -l environment!=production
        
     ![image](https://github.com/user-attachments/assets/3211819f-e239-4585-a210-913b56c4a814)
 
-   Eg2. kubectl get pods -l environment=production
+   Eg 2. kubectl get pods -l environment=production
      
-   ![image](https://github.com/user-attachments/assets/35240b27-75d3-406e-865f-5bf8548437e6)
+     ![image](https://github.com/user-attachments/assets/4cdddc42-ba0c-40d1-b7bf-8a367567f253)
 
 2. **Set-based Selectors**: Select objects based on a set of conditions like `in`, `notin`, `exists`.
 
-   Eg. kubectl get pods -l 'organisation in (nvidia)'
+   Eg 1.  kubectl get pods -l 'environment in (production,staging)'
      
-     ![image](https://github.com/user-attachments/assets/e961968c-a45d-473f-a2c5-796e0bfc1d08)
+     ![image](https://github.com/user-attachments/assets/ddf2a852-a401-46bb-8fef-ce2a8e5a0cb2)
 
+   Eg 2. kubectl get pods -l 'environment notin (production)'
+   
+   ![image](https://github.com/user-attachments/assets/0ebfd91d-3f05-40b8-9155-113b6c54fdf0)
  
 ### **How Labels and Selectors Work Together**
    - **Labels**: Attach metadata to objects.
