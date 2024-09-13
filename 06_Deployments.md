@@ -1,6 +1,7 @@
 # Deployments
 - Deployment is a higher-level abstraction used to **manage the lifecycle of Pods and ReplicaSets.**
-- It creates and manages Pods, through a ReplicaSet, and ensures the desired state of your application is maintained. Deployment -> Replica Set -> Pod
+- It creates and manages Pods, through a ReplicaSet, and ensures the desired state of your application is maintained.
+- Deployment -> Replica Set -> Pod
 - It provides a more powerful and flexible way to handle rolling updates, scaling, rollbacks, and self-healing of your application.
 
 ### Features 
@@ -68,9 +69,9 @@ spec:
 
 ![image](https://github.com/user-attachments/assets/fd685935-5dea-4808-99e6-d67aba3a80e2)
 
-#### when you make some changes in the file new replica set is created 
+#### Make some chnages in the yaml file
 
-- Chnaged the image to centos and echo comomand:
+- Change the image to `centos` and echo comomand:
   
   ```yaml
   containers:                 
@@ -79,7 +80,7 @@ spec:
           command: ["/bin/bash", "-c", "while true; do echo Diljit Dosanjh; sleep 5; done"]
   ```
   
-- New replica set is created -> **Versioning**
+- A new replica set will be created -> **Versioning**
   
   ![image](https://github.com/user-attachments/assets/5b1f6ff8-e39e-4d67-832c-65461a554369)
 
@@ -100,7 +101,7 @@ spec:
       1. Monitoring Progress: To check if a new version of the application has been deployed successfully or if there are issues during the update.
       2. Verification: After initiating an update or rollback, use this command to confirm that the process has completed successfully.
          
-  -  ![image](https://github.com/user-attachments/assets/c3827159-d5ba-4868-8f08-a80d131c609d)
+     ![image](https://github.com/user-attachments/assets/c3827159-d5ba-4868-8f08-a80d131c609d)
     
 - `kubectl rollout history deployment <deployment-name>`
 
@@ -110,7 +111,7 @@ spec:
       1. Tracking Changes: To view the history of updates to a Deployment, including what changes were made and when.
       2. Audit and Troubleshoot: To review past deployments and understand the evolution of your application.
          
-  -  ![image](https://github.com/user-attachments/assets/e5715338-b8b7-49c9-9ab6-aad71351ed34)
+     ![image](https://github.com/user-attachments/assets/e5715338-b8b7-49c9-9ab6-aad71351ed34)
      
 - `kubectl rollout undo deployment <deployment-name>` or `kubectl rollout undo deployment/<deployment-name> --to-revision=2`
 
@@ -119,14 +120,14 @@ spec:
   - When to Use:
     1. Reverting Changes: If a recent deployment introduces issues or fails, use this command to roll back to a previous, stable version.
     2. Quick Fix: To quickly undo problematic updates and restore a previously working state of the application.
-  - 
+    
     ![image](https://github.com/user-attachments/assets/afa59084-01cc-41df-8c41-74fd015aace6)
 
     ##### Verifying
 
     ![image](https://github.com/user-attachments/assets/7125a5cb-3108-4ff3-b4dd-bfa794600958)
 
-NOTE : In Deployment, the number of replicas (Pods) remains constant during updates and rollbacks unless explicitly changed.
+**NOTE : In Deployment, the number of replicas (Pods) remains constant during updates and rollbacks unless explicitly changed.**
 
 
 ## Reasons for a Deployment to Fail
