@@ -33,22 +33,22 @@
 
    - This applies or updates a Kubernetes configuration using the provided YAML file (`<yml-file>`). The file typically defines resources like deployments, services, or config maps. Kubernetes will create or update the resources based on this file.
 
-**yaml file**
+   **yaml file**
+   
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: myfirstpod
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+   ```
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myfirstpod
-spec:
-  containers:
-  - name: nginx
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
-```
-
-   ![image](https://github.com/user-attachments/assets/6fc9c14a-88f0-4ad7-96b7-268ddb3c2b3c)
+      ![image](https://github.com/user-attachments/assets/6fc9c14a-88f0-4ad7-96b7-268ddb3c2b3c)
 
 6. **`kubectl get pods`**:
 
