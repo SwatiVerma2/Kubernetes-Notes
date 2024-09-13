@@ -27,7 +27,7 @@ spec:
 
    ```
 
-   In this example, the Pod is labeled with `app: frontend` and `environment: production`.
+   In this example, the Pod is labeled with `organisation: nvidia` and `environment: production`.
 
 ### Command
 1. `kubectl get pods --show-labels` : lists all the Pods in the current namespace and displays their associated labels. It's a useful way to see the labels that have been applied to your Pods.
