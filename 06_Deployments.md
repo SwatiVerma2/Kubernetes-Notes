@@ -1,5 +1,6 @@
 # Deployments
 - Deployment is a higher-level abstraction used to **manage the lifecycle of Pods and ReplicaSets.**
+- It creates and manages Pods, through a ReplicaSet, and ensures the desired state of your application is maintained.
 - It provides a more powerful and flexible way to handle rolling updates, scaling, rollbacks, and self-healing of your application.
 
 ### Features 
