@@ -71,7 +71,13 @@ spec:
 
 3 replicas are created
 
-![image](https://github.com/user-attachments/assets/d55b2360-8518-4906-aca2-8c07d09b6f44)
+![image](https://github.com/user-attachments/assets/1d07bc49-f4ba-4a71-a79f-bd5afaef2f8c)
+
+Even if you delete these pods it will be created automatically [auto healing]
+
+![image](https://github.com/user-attachments/assets/ef11886d-cdce-4c98-b3ba-78ece0d8178c)
+
+To delete them use `kubectl delete -f replicaset.yml`
 
 # Replication Controller
 
