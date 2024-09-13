@@ -67,7 +67,7 @@ spec:
   
 - `kubectl logs -f mydeployment-9669f5597-fl84s`
 
-![image](https://github.com/user-attachments/assets/fd685935-5dea-4808-99e6-d67aba3a80e2)
+    ![image](https://github.com/user-attachments/assets/fd685935-5dea-4808-99e6-d67aba3a80e2)
 
 #### Make some chnages in the yaml file
 
