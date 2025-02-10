@@ -18,7 +18,7 @@ Scaling refers to adjusting the number of replicas of an application (Pods) runn
    - Adjusting the amount of CPU or memory allocated to a Pod, rather than the number of Pods. 
    - This can be done manually by modifying resource requests/limits in the Pod specification, but it's less common than horizontal scaling in Kubernetes due to the ease and flexibility of scaling Pods.
 
-## Relication
+## Replication
 
 - Replication refers to running multiple instances (replicas) of a Pod to ensure high availability, fault tolerance, and load distribution. 
 - If one Pod fails, others remain available to continue handling traffic.
