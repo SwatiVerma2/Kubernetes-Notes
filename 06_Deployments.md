@@ -136,7 +136,7 @@ spec:
 
 2. **Resource Constraints**: Insufficient CPU or memory, or exceeding resource quotas.
 
-3. **Pod Scheduling Issues**: Problems with node affinity, taints/tolerations, or lack of available nodes.
+3. **Pod Scheduling Issues**: Problems with node affinity, lack of available nodes.
 
 4. **Image Pull Errors**: Issues with pulling container images due to incorrect names or authentication problems.
 
